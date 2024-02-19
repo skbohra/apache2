@@ -1,2 +1,2 @@
-FROM nginx:alpine
-COPY site /usr/share/nginx/html
+FROM httpd:2.4
+COPY site /usr/local/apache2/htdocs/
