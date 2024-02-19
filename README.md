@@ -1,13 +1,13 @@
-# NGINX Example
+# Apache2 Example
 
-This example is deploys a site using [NGINX](https://www.nginx.com/)
+This example is deploys a site using [Apache2 HTTP Server](https://httpd.apache.org/)
 
 [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template/o3MbZe)
 
 
 ## ✨ Features
 
-- NGINX
+- Apache2
 - Static Site
 
 ## 💁‍♀️ How to use
@@ -18,10 +18,11 @@ This example is deploys a site using [NGINX](https://www.nginx.com/)
 
 By default the `site/` directory gets deployed as a static site. This can be modified by changing the `Dockerfile`.
 
-The site is deployed using the default NGINX configuration. This can be overridden with a custom conf file by adding
+The site is deployed using the default Apache 2 HTTP configuration. This can be overridden with a custom conf file by adding
 
 ```
-COPY nginx.conf /etc/nginx/nginx.conf
+FROM httpd:2.4
+COPY ./my-httpd.conf /usr/local/apache2/conf/httpd.conf
 ```
 
-to the end of the Dockerfile. For more information, [read the docs](https://hub.docker.com/_/nginx).
+to the end of the Dockerfile. For more information, [read the docs](https://hub.docker.com/_/httpd).
